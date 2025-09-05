@@ -1,6 +1,6 @@
 # Car Damage Detection Classification (Drag & Drop App)
 
-**Check out the live app here:  [Live Demo]()**
+**Check out the live app here:  [Live Demo](https://demonforms-car-damage.streamlit.app/)**
 
 This application allows you to **drag and drop an image of a car** (third-quarter front or rear view) and automatically predicts the type of **damage**.
 
@@ -34,7 +34,7 @@ The model has been trained on a curated dataset of **~1700 images** and classifi
 
 - **Backend / Model Serving:** Python3.11+, PyTorch, Pytorch Vision, Matplotlib, Optuna etc
 - **Frontend:** Drag-and-drop UI using Streamlit 
-- **Deployment Options:** Streamlit Cloud 
+- **Deployment:** Streamlit Cloud 
 
 ---
 
