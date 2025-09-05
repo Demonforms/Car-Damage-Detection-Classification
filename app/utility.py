@@ -7,7 +7,7 @@ from pathlib import Path
 
 trained_model = None
 class_names = ['Front Breakage', 'Front Crushed', 'Front Normal', 'Rear Breakage', 'Rear Crushed', 'Rear Normal']
-
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # Load the pre-trained ResNet50 model
 class CarClassifierResNet(nn.Module):
@@ -45,7 +45,7 @@ def predict(image_path):
 
     if trained_model is None: # don't load the model every time for each image
         trained_model = CarClassifierResNet()
-        trained_model.load_state_dict(torch.load(Path("model/saved_model.pth")))
+        trained_model.load_state_dict(torch.load(Path("model/saved_model.pth"), map_location = torch.device(device = device)))
         trained_model.eval()
 
     with torch.no_grad():
